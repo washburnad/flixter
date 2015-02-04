@@ -34,6 +34,9 @@ gem 'autoprefixer-rails'
 # Use device for user login management
 gem 'devise'
 
+# Add factory girl
+gem 'factory_girl_rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
