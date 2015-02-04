@@ -40,6 +40,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
   background-size: cover;
 	height: 370px;
 	padding-top: 40px;
+	-webkit-box-shadow: 0px 2px 4px #e09214;
+	-moz-box-shadow: 0px 2px 4px #e09214;
 	box-shadow: 0px 2px 4px #e09214;
 }
 
@@ -59,3 +61,24 @@ h1, h2, h3, h4, h5, h6, .navbar {
 	border-radius: 2px;
 }
 
+.booyah-box {
+	background: #fff;
+  margin-top: 40px;
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+
+
+	-webkit-box-shadow: 0px 2px 4px #e09214;
+	-moz-box-shadow: 0px 2px 4px #e09214;
+	box-shadow: 0px 2px 4px #e09214;
+
+	h1, h2 {
+		margin: 10px;
+	}
+
+	.btn {
+		margin-left: 0;
+	}
+}
