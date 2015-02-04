@@ -5,24 +5,18 @@ class UsersControllerTest < ActionController::TestCase
   #   assert true
   # end
 
-  # test "create new user" do
-  # 	user = FactoryGirl.create(:user)
+  test "new user registration path" do
+    get new_user_registration_path
 
-  # 	assert_difference 'user.count' do
-  # 		post :create, :user => user
-  # 	end
+    assert_response :success
+  end
 
-  # 	assert_equal 1, User.count
-  # 	assert_redirected_to root_path
+  test "new user session path" do
+  	get new_user_session_path
 
-  # end
+  	assert_response :success
 
-  # test "new user" do
-  # 	get :new
-
-  # 	assert_response :success
-
-  # end
+  end
 
 
 end
