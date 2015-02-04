@@ -31,6 +31,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'autoprefixer-rails'
 
+# Use device for user login management
+gem 'devise'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
