@@ -6,7 +6,8 @@ class StaticPagesControllerTest < ActionController::TestCase
   # end
 
   test "index" do
-  	get :index
+		get :index
 		assert_response :success
   end
+
 end
