@@ -1,10 +1,7 @@
 require 'test_helper'
 
 class Instructor::CoursesControllerTest < ActionController::TestCase
-  # include Devise::TestHelpers
-  # include Warden::Test::Helpers  
-  # Warden.test_mode!
-
+  
   test "course new page"	do
     create_and_log_in_user!
   	get :new
@@ -23,7 +20,6 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   # create a course and no user is signed in.  Triggering uncaught throw: warden
   
   test "course new page redirect to sign in" do
-    # @request.env["devise.mapping"] = Devise.mappings[:course]
     
     get :new
 

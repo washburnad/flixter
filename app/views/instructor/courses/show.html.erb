@@ -7,11 +7,22 @@
 	</div>
 	<ul>
 		<% @course.sections.each do |section| %>
-			<li> <%= link_to section.title, '#' %></li>
-			<li> <%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %></li>	
+			<li> <%= link_to section.title, '#' %><%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %></li>
+			<ul>
+				<% section.lessons.each do |lesson| %>
+					<li>
+						<%= link_to lesson.title, '#' %> : <%= lesson.subtitle %>
+					</li>
+				<% end %>
+			</ul>	
+			<hr class='clr' />
 		<% end %>
 	</ul>
 	<br />
-	<p><%= @course.description %></p>
-	<p><%= number_to_currency @course.cost %></p>
+	<div class='col-sm-9 col-xs-12'>	
+		<p><%= @course.description %></p>
+	</div>
+	<div class='col-sm-3 col-xs-12'>
+		<p><%= number_to_currency @course.cost %></p>
+	</div>
 </div>

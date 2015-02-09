@@ -95,6 +95,10 @@ h1, h2, h3, h4, h5, h6, .navbar {
   margin: 10px;
 }
 
+ul li .pull-right {
+	margin: 0;
+}
+
 /*   STICKY FOOTER STYLES */
 
 $footer-height: 100px;
