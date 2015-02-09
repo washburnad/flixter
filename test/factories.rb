@@ -1,11 +1,6 @@
-FactoryGirl.define do  factory :lesson do
-    
-  end
-  factory :section do
-    
-  end
- 
+FactoryGirl.define do  
 
+   
   factory :user do
     email "example@example.com"
     password "gogogogogo"
@@ -17,4 +12,12 @@ FactoryGirl.define do  factory :lesson do
   	cost 29.99
   end
 
+  factory :section do
+    title "a section"
+  end
+
+  factory :lesson do
+    
+  end
+ 
 end
