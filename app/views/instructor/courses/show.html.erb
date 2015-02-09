@@ -8,6 +8,7 @@
 	<ul>
 		<% @course.sections.each do |section| %>
 			<li> <%= link_to section.title, '#' %></li>
+			<li> <%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %></li>	
 		<% end %>
 	</ul>
 	<br />
