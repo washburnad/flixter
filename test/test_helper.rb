@@ -4,8 +4,7 @@ require 'rails/test_help'
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
-  include Devise::TestHelpers
-
+  
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
@@ -18,5 +17,8 @@ class ActiveSupport::TestCase
     @user = FactoryGirl.create(:user)
     sign_in @user
   end
+end
 
+class ActionController::TestCase
+  include Devise::TestHelpers
 end
