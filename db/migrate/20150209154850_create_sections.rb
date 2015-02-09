@@ -6,5 +6,6 @@ class CreateSections < ActiveRecord::Migration
 
       t.timestamps
     end
+
   end
 end

@@ -9,6 +9,8 @@
 		<% @course.sections.each do |section| %>
 			<li> <%= link_to section.title, '#' %></li>
 		<% end %>
+	</ul>
+	<br />
 	<p><%= @course.description %></p>
 	<p><%= number_to_currency @course.cost %></p>
 </div>
