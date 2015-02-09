@@ -5,23 +5,15 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   # include Warden::Test::Helpers  
   # Warden.test_mode!
 
-  # def teardown                                         
-  #   Warden.test_reset!                                 
-  # end 
-  
-  setup do
-  	@user = FactoryGirl.create(:user)
-    sign_in @user
-  end
-
   test "course new page"	do
+    create_and_log_in_user!
   	get :new
-
-  	assert_response :success
+    assert_response :success
   end
 
   test "course show page" do
-  	course = FactoryGirl.create(:course)
+  	create_and_log_in_user!
+    course = FactoryGirl.create(:course)
   	get :show, :id => course.id
 
   	assert_response :success
@@ -31,7 +23,6 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   # create a course and no user is signed in.  Triggering uncaught throw: warden
   
   test "course new page redirect to sign in" do
-    sign_out @user
     # @request.env["devise.mapping"] = Devise.mappings[:course]
     
     get :new
