@@ -1,6 +1,6 @@
 class Instructor::CoursesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :require_authorized_for_current_course, :only => [:show]
+	before_action :require_authorized_for_current_course, :only => [:show, :create, :edit, :update]
 
 	def new
 		@course = Course.new
@@ -16,13 +16,25 @@ class Instructor::CoursesController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
 	def show
+	end
+
+	def update
+		current_course.update_attributes(course_params)
+		if current_course.valid?
+			redirect_to instructor_course_path(current_course)
+		else
+			render :edit, :status => :unprocessable_entity
+		end
 	end
 
 	private
 
 	def course_params
-		params.require(:course).permit(:title, :description, :cost)
+		params.require(:course).permit(:title, :description, :cost, :image)
 	end
 
 	helper_method :current_course
