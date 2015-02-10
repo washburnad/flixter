@@ -34,8 +34,8 @@ gem 'autoprefixer-rails'
 # Use device for user login management
 gem 'devise'
 
-# Add factory girl
-gem 'factory_girl_rails'
+# Carrierwave for data uploads
+gem 'carrierwave'
 
 # Add simple forms
 gem 'simple_form'
@@ -43,6 +43,12 @@ gem 'simple_form'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test do
+	# Add factory girl for testing data structures
+	gem 'factory_girl_rails'
+
 end
 
 # Use ActiveModel has_secure_password

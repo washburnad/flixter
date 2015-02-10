@@ -10,7 +10,7 @@ class Instructor::LessonsControllerTest < ActionController::TestCase
   	@lesson = FactoryGirl.create(:lesson)
   	create_and_log_in_user!
 
-  	get :new, :section_id = @section.section_id
+  	get :new, :section_id => @section.section_id
 
   	assert_response :success
   end
