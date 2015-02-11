@@ -32,30 +32,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
 	color: #e09214;
 }
 
-.hero {
-	background: url('hero.jpg') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-	height: 370px;
-	padding-top: 40px;
-	-webkit-box-shadow: 0px 2px 4px #e09214;
-	-moz-box-shadow: 0px 2px 4px #e09214;
-	box-shadow: 0px 2px 4px #e09214;
-}
-
-.frosty {
-	background: rgba(0,0,0,0.4);
-	padding: 40px;
-	
-	color: #ffffff;
-	h1, h2 {
-		text-shadow: rgba(0,0,0,0.9);
-	}
-
-}
-
 .btn {
 	margin: 10px 5px 5px 5px;
 	border-radius: 2px;
@@ -103,6 +79,52 @@ ul li .pull-right {
 .img-responsive {
 	margin: 10px auto;
 }
+
+/*   PAGE SPECIFIC CSS    */
+
+.hero {
+	background: url('hero.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 370px;
+	padding-top: 40px;
+	-webkit-box-shadow: 0px 2px 4px #e09214;
+	-moz-box-shadow: 0px 2px 4px #e09214;
+	box-shadow: 0px 2px 4px #e09214;
+}
+
+.frosty {
+	background: rgba(0,0,0,0.4);
+	padding: 40px;
+	
+	color: #ffffff;
+	h1, h2 {
+		text-shadow: rgba(0,0,0,0.9);
+	}
+
+}
+
+.lesson {
+	background-color: #000000;
+	margin-top: 10px;
+	height: 130px;
+	font-size: 15px;
+	a {
+		color: #ffffff;
+	}
+	a b {
+		font-size: 25px;
+	}
+}
+
+.section {
+	border: 1px solid;
+  border-color: #e09214 #bebebd #bebebd #e09214;
+  padding: 20px;
+}
+ 
 
 /*   STICKY FOOTER STYLES */
 
