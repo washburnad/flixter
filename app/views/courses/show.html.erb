@@ -11,7 +11,7 @@
 			<%= link_to 'Administer', instructor_course_path(@course), :class => 'btn btn-primary' %>
 		<% end %>
 		<% if current_user && current_user.enrolled_in?(@course) %>
-			<%= link_to 'Unenroll', '#', :class => 'btn btn-primary' %>
+			<%= link_to 'Unenroll', course_enrollment_path(@course, current_enrollment), :class => 'btn btn-primary', :method => :delete %>
 		<% else %>
 			<%= link_to 'Enroll', course_enrollments_path(@course), :class => 'btn btn-primary', :method => :post %>
 		<% end %>
