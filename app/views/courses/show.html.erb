@@ -6,13 +6,19 @@
 		<p><%= @course.description %></p>	
 	</div>
 	<div class='col-sm-3 col-xs-12 text-center'>
+		<br />
 		<% if current_user && current_user == @course.user %>
-			<br />
 			<%= link_to 'Administer', instructor_course_path(@course), :class => 'btn btn-primary' %>
+		<% end %>
+		<% if current_user && current_user.enrolled_in?(@course) %>
+			<%= link_to 'Unenroll', '#', :class => 'btn btn-primary' %>
+		<% else %>
+			<%= link_to 'Enroll', course_enrollments_path(@course), :class => 'btn btn-primary', :method => :post %>
 		<% end %>
 		<span class='label label-default'>
 			<%= number_to_currency @course.cost %>
 		</span>
+
 	</div>
 	<div class='col-xs-12'>
 		<% @course.sections.each do |section| %>
