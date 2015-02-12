@@ -10,4 +10,10 @@ class CoursesController < ApplicationController
 	private
 
 
+
+	helper_method :current_enrollment
+	def current_enrollment
+		@current_enrollment = current_user.enrollments.where( course_id: @course.id )
+
+	end
 end
