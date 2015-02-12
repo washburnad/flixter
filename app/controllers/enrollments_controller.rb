@@ -6,6 +6,11 @@ class EnrollmentsController < ApplicationController
 		redirect_to course_path(current_course)
 	end
 
+	def destroy
+
+	end
+	
+
 	private
 
 	def current_course
