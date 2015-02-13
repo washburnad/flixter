@@ -59,6 +59,13 @@ group :test do
 
 end
 
+group :development do
+
+	gem 'byebug'
+	
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

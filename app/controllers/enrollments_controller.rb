@@ -7,7 +7,8 @@ class EnrollmentsController < ApplicationController
 	end
 
 	def destroy
-		# @enrollment = current_user.enrolled_courses.where(:course_id => current_course)
+		# byebug
+		# @enrollment = current_user.enrolled_courses.find(current_course.id)
 		# Enrollment.delete(@enrollment)
 		current_user.enrolled_courses.delete(current_course)
 		redirect_to course_path(current_course)

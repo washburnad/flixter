@@ -13,7 +13,10 @@ class CoursesController < ApplicationController
 
 	helper_method :current_enrollment
 	def current_enrollment
-		@current_enrollment = current_user.enrollments.where( course_id: @course.id )
+	
+		@current_enrollment = current_user.enrollments.where( course_id: @course.id ).first
+	
+
 
 	end
 end
