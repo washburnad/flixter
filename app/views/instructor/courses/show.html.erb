@@ -10,7 +10,7 @@
 		<% current_course.sections.each do |section| %>
 			<li> <%= link_to section.title, '#' %><%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %></li>
 			<ul>
-				<% section.lessons.each do |lesson| %>
+				<% section.lessons.rank(:row_order).each do |lesson| %>
 					<li>
 						<%= link_to lesson.title, '#' %> : <%= lesson.subtitle %>
 					</li>

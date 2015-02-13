@@ -52,6 +52,9 @@ gem 'mini_magick'
 # add stripe card processing
 gem 'stripe'
 
+# add ordering
+gem 'ranked-model'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
