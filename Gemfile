@@ -46,7 +46,11 @@ gem 'figaro'
 # facilitates communication between carrierwave and figaro
 gem 'fog', '~> 1.3.1'
 
+# add image resizing
 gem 'mini_magick'
+
+# add stripe card processing
+gem 'stripe'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
