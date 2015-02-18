@@ -33,7 +33,10 @@
 	<%= image_tag current_course.image, :class => 'img-responsive' %> 
 	<div class='text-center'>
 		<%= link_to 'Preview as student', course_path(current_course), :class => 'btn btn-primary' %>
-		<%= link_to 'Add a new section', new_instructor_course_section_path(current_course), :class => 'btn btn-primary' %>
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary" data-toggle="modal" data-target="#newSectionModal">
+			New Section
+		</button>
 		<%= link_to 'Edit course', edit_instructor_course_path(current_course), :class => 'btn btn-primary' %>
 	</div>
 	<ul class='sections'>
@@ -72,4 +75,48 @@
 	<div class='col-sm-3 col-xs-12'>
 		<p><%= number_to_currency current_course.cost %></p>
 	</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="newSectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="newSectionModalLabel">Add a new Section</h4>
+      </div>
+      <div class="modal-body">
+        <h2><%= link_to current_course.title, courses_path(current_course) %></h2>
+        <%= simple_form_for @section, :url => instructor_course_sections_path(current_course) do |f| %>
+        	<%= f.input :title %>
+        	<%= f.submit 'Add Section', :class => 'btn btn-primary' %>
+        <% end %>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newLessonModal">
+  New Lesson
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="newLessonModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="newLessonModalLabel">Add a new Lesson</h4>
+      </div>
+      <div class="modal-body">
+        
+        
+      </div>
+      
+    </div>
+  </div>
 </div>
