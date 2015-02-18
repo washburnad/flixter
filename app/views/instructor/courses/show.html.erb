@@ -11,6 +11,20 @@
       }
   	});
 	});
+
+	$(function() {
+		$('.sections').sortable({
+			update: function( event, ui ) {
+				$.ajax({
+					type: 'PUT',
+					url: ui.item.data('update-url'),
+					dataType: 'json',
+					data: { section: {row_order_position: ui.item.index() } }
+
+				});
+			}
+		});
+	});
 </script>
 
 
@@ -22,17 +36,19 @@
 		<%= link_to 'Add a new section', new_instructor_course_section_path(current_course), :class => 'btn btn-primary' %>
 		<%= link_to 'Edit course', edit_instructor_course_path(current_course), :class => 'btn btn-primary' %>
 	</div>
-	<ul>
-		<% current_course.sections.each do |section| %>
-			<li> <%= link_to section.title, '#' %><%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %></li>
-			<ul class='lessons'>
-				<% section.lessons.rank(:row_order).each do |lesson| %>
-					<li data-update-url="<%= instructor_lesson_path(lesson.id) %>" >
-						<%= link_to lesson.title, '#' %> : <%= lesson.subtitle %>
-					</li>
-				<% end %>
-			</ul>	
-			<hr class='clr' />
+	<ul class='sections'>
+		<% current_course.sections.rank(:row_order).each do |section| %>
+
+			<li data-update-url="<%= instructor_course_section_path(section.course, section.id) %>" > <%= link_to section.title, '#' %><%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
+				<ul class='lessons'>
+					<% section.lessons.rank(:row_order).each do |lesson| %>
+						<li data-update-url="<%= instructor_lesson_path(lesson.id) %>" >
+							<%= link_to lesson.title, '#' %> : <%= lesson.subtitle %>
+						</li>
+					<% end %>
+				</ul>	
+				<hr class='clr' />
+			</li>
 		<% end %>
 	</ul>
 	<br />

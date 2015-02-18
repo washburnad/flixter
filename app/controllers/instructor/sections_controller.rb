@@ -16,10 +16,16 @@ class Instructor::SectionsController < ApplicationController
 		end
 	end
 
+	def update
+		@section = Section.find(params[:id])
+		@section.update_attributes(section_params)
+		render :text => 'updated!'
+	end
+
 	private
 
 	def section_params
-		params.require(:section).permit(:title)
+		params.require(:section).permit(:title, :row_order_position)
 	end
 
 	helper_method :current_course
