@@ -45,7 +45,10 @@
 			<li data-update-url="<%= instructor_course_section_path(section.course, section.id) %> " class = 'section-li'> 	<div class = 'header'>
 					<span class='glyphicon glyphicon-list'></span>
 					<%= link_to section.title, '#' %>
-					<%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
+					<!-- Button trigger modal -->
+					<button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#newLessonModal">
+					  New Lesson
+					</button>
 				</div>
 				<ul class='lessons'>
 					<% section.lessons.rank(:row_order).each do |lesson| %>
@@ -99,10 +102,7 @@
   </div>
 </div>
 
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newLessonModal">
-  New Lesson
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="newLessonModalLabel" aria-hidden="true">
