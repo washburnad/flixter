@@ -39,15 +39,29 @@
 	<ul class='sections'>
 		<% current_course.sections.rank(:row_order).each do |section| %>
 
-			<li data-update-url="<%= instructor_course_section_path(section.course, section.id) %>" > <%= link_to section.title, '#' %><%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
+			<li data-update-url="<%= instructor_course_section_path(section.course, section.id) %> " class = 'section-li'> 	<div class = 'header'>
+					<span class='glyphicon glyphicon-list'></span>
+					<%= link_to section.title, '#' %>
+					<%= link_to 'Add new lesson',  new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
+				</div>
 				<ul class='lessons'>
 					<% section.lessons.rank(:row_order).each do |lesson| %>
 						<li data-update-url="<%= instructor_lesson_path(lesson.id) %>" >
-							<%= link_to lesson.title, '#' %> : <%= lesson.subtitle %>
+							<div class='col-xs-1' >
+								<span class='glyphicon glyphicon-list'></span>
+							</div>
+							<div class='col-xs-11 text-center' >
+								<p>
+									<b><%= link_to lesson.title, '#' %></b>
+								</p>
+								<p>
+									<%= lesson.subtitle %>
+								</p>
+							</div>
+							<br class='clr' />
 						</li>
 					<% end %>
-				</ul>	
-				<hr class='clr' />
+				</ul>
 			</li>
 		<% end %>
 	</ul>
