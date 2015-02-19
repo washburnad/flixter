@@ -25,6 +25,15 @@
 			}
 		});
 	});
+
+	$(function() {
+		$('.sections button').click( function() {
+			var actionURL = $(this).data('lesson-url');
+			$('#newLessonModal form').attr('action', actionURL );
+
+		});
+
+	});
 </script>
 
 
@@ -46,7 +55,7 @@
 					<span class='glyphicon glyphicon-list'></span>
 					<%= link_to section.title, '#' %>
 					<!-- Button trigger modal -->
-					<button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#newLessonModal">
+					<button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
 					  New Lesson
 					</button>
 				</div>
@@ -113,7 +122,13 @@
         <h4 class="modal-title" id="newLessonModalLabel">Add a new Lesson</h4>
       </div>
       <div class="modal-body">
-        
+        <%= simple_form_for @lesson, :url => '#' do |f| %>
+        	<%= f.input :title %>
+        	<%= f.input :subtitle %>
+        	<%= f.input :video %>
+
+        	<%= f.submit 'Add Lesson', :class => 'btn btn-primary' %>
+        <% end %>
         
       </div>
       
