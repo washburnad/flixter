@@ -6,4 +6,16 @@ class Lesson < ActiveRecord::Base
 	ranks :row_order, :with_same => :section_id
 
 	validates :title, :presence => true
+
+	def next_lesson
+		lesson = section.lessons.where("row_order > ?", self.row_order).rank(:row_order).first
+		
+		if lesson.blank? && section.next_section
+			return section.next_section.lessons.rank(:row_order).first
+		else
+			return lesson
+		end
+
+	end
+
 end
