@@ -61,10 +61,40 @@
 
 <div id='footer'>
 	<div class='container'>
-		Footer
-		<ul>
-			<li><%= link_to 'Teach a Course', new_instructor_course_path %> </li>
-		</ul>
+		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
+			<h3> Teachers </h3>
+			<%= link_to 'Teach a Course', new_instructor_course_path %>
+			<br />
+			<%= link_to 'My Dashboard', dashboard_path %>
+		
+		</div>
+		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
+			<h3> About </h3>
+			<%= link_to 'Team', '#' %>
+			<br />
+			<%= link_to 'Careers', '#' %>
+			<br />
+			<%= link_to 'Privacy Policy', '#' %>
+			
+		</div>
+		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
+			<h3> Contact </h3>
+			aaron@it-kutch.com
+			<br />
+			my house
+			<br />
+			boston ma 
+		</div>
+		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
+			<h3> Social </h3>
+			<%= link_to 'https://plus.google.com/102437981976379545813/posts' do %>
+				<%= image_tag 'googleplus.png', :class => 'social-button' %>
+			<% end %>
+			<%= link_to 'http://www.facebook.com/awashburn1' do %>
+				<%= image_tag 'facebook.png', :class => 'social-button' %>
+		  <% end %>
+			<%= image_tag 'twitter.png', :class => 'social-button' %>
+		</div>
 	</div>
 </div>
 </body>

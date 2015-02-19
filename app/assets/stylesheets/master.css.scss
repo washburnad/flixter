@@ -185,8 +185,30 @@ body {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: $footer-height;
+	height: auto;
+  min-height: $footer-height;
   background: url('alum.png');
+  font-weight: 100;
+  color: #ffffff;
+  a {
+  	color: #ffffff;
+  }
 
+  h3 {
+  	font-weight: 500;
+  	color: #e09214;
+  }
+
+  .social-button {
+  	width: 32px;
+  	margin: 4px;
+  }
+
+  .footer-block {
+  	height: 100px;
+  	text-align: center;
+  }
 }
+
+
 
