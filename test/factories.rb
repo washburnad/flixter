@@ -17,7 +17,7 @@ FactoryGirl.define do
   end
 
   factory :lesson do
-    
+    title "a lesson"
   end
  
 end

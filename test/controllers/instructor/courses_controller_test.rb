@@ -10,7 +10,7 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
 
   test "course show page" do
   	create_and_log_in_user!
-    course = FactoryGirl.create(:course)
+    course = FactoryGirl.create(:course, user_id: @user.id)
   	get :show, :id => course.id
 
   	assert_response :success

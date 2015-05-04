@@ -15,7 +15,7 @@
     .vjs-default-skin .vjs-big-play-button { background: rgba(224,146,20,0.7) }
     .vjs-default-skin .vjs-slider { background: rgba(0,0,0,0.2333333333333333) }
     .vjs-default-skin .vjs-control-bar { font-size: 69% }
-    .video-js {padding-top: 56.25%}
+    .video-js {padding-top: 1em%}
     .vjs-fullscreen {padding-top: 0px}
   </style>
 
@@ -79,11 +79,9 @@
 		</div>
 		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
 			<h3> Contact </h3>
-			aaron@it-kutch.com
+			<%= mail_to 'aaron@it-kutch.com', 'aaron@it-kutch.com' %>
 			<br />
-			my house
-			<br />
-			boston ma 
+			Boston MA 
 		</div>
 		<div class='col-xs-12 col-sm-6 col-md-3 footer-block'>
 			<h3> Social </h3>
@@ -93,7 +91,9 @@
 			<%= link_to 'http://www.facebook.com/awashburn1' do %>
 				<%= image_tag 'facebook.png', :class => 'social-button' %>
 		  <% end %>
-			<%= image_tag 'twitter.png', :class => 'social-button' %>
+		  <%= link_to 'https://twitter.com/washburnad' do %>
+				<%= image_tag 'twitter.png', :class => 'social-button' %>
+			<% end %>
 		</div>
 	</div>
 </div>
