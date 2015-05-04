@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
 	def index
-
+		@courses = Course.last(3)
 	end
 
 	def privacy
